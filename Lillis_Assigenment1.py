@@ -6,7 +6,7 @@ class newQueue(Queue.Queue):
 	def put(self, arg):
 		try:
 			arg+=1
-			Queue.Queue.put(self,arg)
+			Queue.Queue.put(self,arg-1)
 		except TypeError:
 			print "Can only add integers to the queue."
 	def pop(self):
@@ -116,6 +116,7 @@ class Graph():
 			print(self.vertices[value])
 			return
 
+### TESTING ###
 ## Queue Tests ##
 print("Testing Queue...")
 queue = newQueue()
@@ -123,6 +124,8 @@ for i in range(0,10):
 	queue.put(i)
 for i in range(0,10):
 	print(queue.pop())
+print("Finshed Queue Tests")
+
 ## Stack Tests ##
 print("Testing Stack...")
 stack = Stack()
@@ -130,6 +133,8 @@ for i in range(0,10):
 	stack.push(i)
 for i in range(0,10):
 	print(stack.pop())
+print("Finshed Stack Tests")
+
 ## Binary Tree Tests ##
 print("Testing Binary Tree..")
 tree = BinaryTree(0)
@@ -141,6 +146,8 @@ tree.delete(10)
 tree.delete(9)
 print("Deleted node 10 and 9")
 tree.printTree()
+print("Finshed Tree Tests")
+
 ## Graph Tests ##
 print("Testing Graph...")
 graph = Graph(10)
@@ -154,6 +161,7 @@ print("Added 20 Edges")
 for i in range(0,5):
 	graph.findVertex(i)
 print("Found 5 Verticies")
-print(graph.vertices)
+print("Finshed Graph Tests")
+
 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 print("FINISHED!")
